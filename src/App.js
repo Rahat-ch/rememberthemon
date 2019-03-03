@@ -44,16 +44,16 @@ class App extends Component {
 
   handleClick = (e) => {
     if (clicked.includes(e.target.id)) {
-      alert("You already clicked that!")
       clicked = [];
       shuffle(images);
         if (this.state.score > this.state.highScore) {
           this.setState({ clicked: clicked, images: images, score: 0, highScore: this.state.score, status: "Good work trainer you earned a high score!" })
+          alert("Game over")
         } else {
           this.setState({ clicked: clicked, images: images, score: 0, status: "You need more badges trainer!" })
+          alert("Game over")
         };
     } else if (!clicked.includes(e.target.id)) {
-      alert ("You clicked " + e.target.id)
       clicked.push(e.target.id);
       shuffle(images);
       this.setState({ clicked: clicked, images: images, score: this.state.score + 1, status: "It's super effective!" });
