@@ -19,7 +19,8 @@ class App extends Component {
   handleClick(e) {
     if (this.state.clicked !== e) {
       alert("You clicked " + e.target.id)
-    } else if (this.state.clicked === e) {
+      this.setState(() => ({ clicked: e.target.id}))
+    } else if (this.state.clicked === e.target.id) {
       alert("You already clicked that!")
     }
 
