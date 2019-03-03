@@ -16,10 +16,10 @@ class App extends Component {
   //   alert("You clicked " + e.target.id)
   // }
 
-  handleClick(e) {
-    if (this.state.clicked !== e) {
+  handleClick = (e) => {
+    if (this.state.clicked !== e.target.id) {
       alert("You clicked " + e.target.id)
-      this.setState(() => ({ clicked: e.target.id}))
+      this.setState({ clicked: e.target.id})
     } else if (this.state.clicked === e.target.id) {
       alert("You already clicked that!")
     }
@@ -27,7 +27,7 @@ class App extends Component {
   }
   render() {
     return (
-    <Grid 
+    <Grid
     images = {this.state.images}
     handleClick = {this.handleClick}
     />
