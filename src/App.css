@@ -11,3 +11,24 @@
   margin-left: 20%;
   margin-top: 10%;
 }
+
+.board{
+  background-color: aliceblue;
+}
+
+.title{
+  font-size: 2rem;
+}
+
+h3{
+  font-size: 1.25rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
+.scores{
+  display: flex;
+  justify-content: space-around;
+}
