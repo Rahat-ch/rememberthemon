@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Grid from "./components/Grid";
+
 class App extends Component {
+
+  state = {
+    score: 0,
+    highScore: 0,
+    clicked: "",
+    images: ["alakazam", "arcanine", "charizard", "clefairy", "eevee", "gengar", "jigglypuff", "mewtwo", "ninetales", "pikachu", "poliwrath", "psyduck", "scyther", "snorlax", "tentacruel"]
+  }
+
+  handleClick(e){
+    alert("You clicked " + e.target.id)
+  }
+
+  // handleClick(e) {
+  //   if (this.state.clicked !== e) {
+  //     alert("You clicked " + e.target.id)
+  //   } else if (this.state.clicked === e) {
+  //     alert("You already clicked that!")
+  //   }
+
+  // }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    <Grid 
+    images = {this.state.images}
+    handleClick = {this.handleClick}
+    />
     );
   }
 }
